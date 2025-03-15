@@ -197,7 +197,14 @@ class InflectionRight(types.Transform):
                 true_var = self.get_inner_variable(prevOut.source + "_hi")
                 true_expr = true_expr.substitute(Variable("x"), true_var)
                 false_expr = false_expr.substitute(Variable("x"), x_in_name)
-                reduced_name = self.get_inner_variable(so_far[0].in_names[i])
+
+                # Check if i is within bounds before accessing
+                if i < len(so_far[0].in_names):
+                    reduced_name = self.get_inner_variable(so_far[0].in_names[i])
+                else:
+                    # Fallback to the last available input name
+                    reduced_name = self.get_inner_variable(so_far[0].in_names[-1])
+                
                 part = lego_blocks.IfLess(numeric_type,
                                           [x_in_name],
                                           [reduced_name],
