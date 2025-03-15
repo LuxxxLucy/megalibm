@@ -28,6 +28,7 @@ from lambdas import *
 
 asin = fpcore.parse("(FPCore (x) (asin x))")
 linear_cutoff = "1.38777878078144552146e-17"
+input_ranges = [Interval("0", "0.5"), Interval("-1", "1")]
 
 
 reference_impl = "amd_fast_asin.c"

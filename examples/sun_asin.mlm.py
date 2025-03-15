@@ -31,6 +31,7 @@ one_i = Interval("1", "1")
 linear_cutoff = "7.450580596923828125e-9"
 linear_i = Interval("0", linear_cutoff)
 HPI = fpcore.parse_expr("PI_2")
+input_ranges = [Interval("0", "0.5"), Interval("-1", "1")]
 
 reference_impl = "sun_asin.c"
 lambda_expression = \
