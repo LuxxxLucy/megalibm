@@ -1,0 +1,20 @@
+[project]
+name = "megalibm"
+version = "0.1.0"
+description = "MegaLibM: Implementation and Synthesis of Math Library Functions"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.9.4",
+    "maturin>=1.8.3",
+    "mpmath>=1.3.0",
+    "pandas>=2.2.3",
+    "sly>=0.5",
+    "snake-egg",
+    "sympy>=1.13.3",
+    "z3-solver>=4.14.1.0",
+]
+
+[tool.uv.sources]
+snake-egg = { git = "https://github.com/LuxxxLucy/snake-egg.git" }
+
