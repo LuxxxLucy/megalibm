@@ -1,6 +1,7 @@
 .DS_Store
 __pycache__
 bin
+src/megalibm.egg-info
 data/
 generated/
 measurement/error/generated/
