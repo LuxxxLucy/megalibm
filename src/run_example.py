@@ -77,7 +77,7 @@ def determine_reference(environment):
     # 2. A filename and a function name, we will read the file for the code
     # 3. Code and a function name
     # 4. Nothing, there is no reference
-    reference_filename = environment.get("reference_filename", None)
+    reference_filename = environment.get("reference_impl", None)
     reference_function_name = environment.get("reference_function_name", None)
     reference_code = environment.get("reference_code", None)
     if (reference_filename is not None
@@ -167,6 +167,7 @@ def main(argv):
     with open(args.example_file, "r") as f:
         example = f.read()
     example_globals = dict()
+    example_globals["__file__"] = args.example_file
     exec(example, example_globals)
 
     # Get the lambda and type check
